@@ -1,17 +1,26 @@
-#include<stdio.h>
-int factorial (int n){
-int i=1;
-while (n>1){
-i=i*n;
-n=n-1;
-}
-return i;
+#include <stdio.h>
+
+int factorial(int n) {
+    int i = 1;
+    while (n > 1) {
+        i = i * n;
+        n--;
+    }
+    return i;
 }
 
-int main (int argc, char * argv []){
-int fac4 = factorial(4);
-int fac5 = factorial (5);
-printf ("4!=%d,5!=%d\n", fac4, fac5);
-return 0;
-}
+int main(void) {
+    int n;
+    printf("Digite un número entero no negativo: ");
+    scanf("%d", &n);
 
+    if (n < 0) {
+        printf("Error: el factorial no está definido para números negativos.\n");
+        return 1;
+    }
+
+    int resultado = factorial(n);
+    printf("%d! = %d\n", n, resultado);
+
+    return 0;
+}
